@@ -1,5 +1,5 @@
 /* ============================================================
-   CACAP — Shared Navigation, Footer, and Interactivity
+   CACAP â€” Shared Navigation, Footer, and Interactivity
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="header-top">
       <div class="logo-area">
         <a href="index.html">
+          <img src="images/logo.jpg" alt="CACAP Logo" class="logo-img">
           <div class="logo-text">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
         </a>
       </div>
