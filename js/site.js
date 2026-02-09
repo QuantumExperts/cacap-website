@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <a href="expert-determination.html">Expert Determination</a>
             <a href="expert-witness.html">Expert Witness</a>
             <a href="dispute-boards.html">Dispute Boards</a>
-            <a href="adjudication.html">Adjudication</a>
             <a href="nomination.html">Nomination</a>
             <a href="admin-services.html">Dispute Resolution Administration</a>
           </div>
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'about.html': 'About', 'rules.html': 'About', 'faqs.html': 'About',
     'services.html': 'Services', 'arbitration.html': 'Services', 'mediation.html': 'Services',
     'expert-determination.html': 'Services', 'expert-witness.html': 'Services',
-    'dispute-boards.html': 'Services', 'adjudication.html': 'Services',
+    'dispute-boards.html': 'Services',
     'nomination.html': 'Services', 'admin-services.html': 'Services',
     'nomination-request.html': 'Services',
     'accreditation.html': 'Accreditation', 'panels.html': 'Accreditation',
