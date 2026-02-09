@@ -700,12 +700,19 @@ img { max-width: 100%; height: auto; }
 .form-check {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 12px;
-  font-size: 14px;
-  color: var(--text-light);
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
 }
-.form-check input { margin-top: 4px; }
+.form-check input {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+.form-check span {
+  flex: 1;
+}
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
