@@ -1,5 +1,5 @@
 /* ============================================================
-   CACAP — Construction Arbitration Centre Asia Pacific
+   CACAP â€” Construction Arbitration Centre Asia Pacific
    Shared Stylesheet
    ============================================================ */
 
@@ -58,6 +58,14 @@ img { max-width: 100%; height: auto; }
   gap: 16px;
 }
 .logo-area a { display: flex; align-items: center; gap: 16px; }
+.logo-img {
+  height: 60px;
+  width: 60px;
+  transition: var(--tr);
+}
+.logo-img:hover {
+  transform: scale(1.05);
+}
 .logo-text {
   color: var(--white);
   font-family: var(--hf);
@@ -306,8 +314,14 @@ img { max-width: 100%; height: auto; }
 /* --- CARDS --- */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+}
+@media (max-width: 1100px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .cards-grid { grid-template-columns: 1fr; }
 }
 .card {
   background: var(--white);
@@ -315,6 +329,10 @@ img { max-width: 100%; height: auto; }
   padding: 36px 28px;
   transition: var(--tr);
   position: relative;
+  cursor: pointer;
+}
+.card:has(.card-link) {
+  cursor: pointer;
 }
 .card::before {
   content: '';
@@ -348,8 +366,8 @@ img { max-width: 100%; height: auto; }
 }
 .card p {
   color: var(--text-light);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.8;
   margin-bottom: 16px;
 }
 .card-link {
@@ -862,7 +880,7 @@ img { max-width: 100%; height: auto; }
 .mb-24 { margin-bottom: 24px; }
 .text-muted { color: var(--text-light); }
 .text-sm { font-size: 14px; }
-.text-body { font-size: 15.5px; line-height: 1.8; color: var(--text-light); margin-bottom: 16px; }
+.text-body { font-size: 16.5px; line-height: 1.8; color: var(--text-light); margin-bottom: 16px; }
 .heading-sub {
   font-family: var(--hf);
   font-size: 24px;
