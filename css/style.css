@@ -120,7 +120,6 @@ img { max-width: 100%; height: auto; }
   color: var(--gold);
   border-bottom-color: var(--gold);
 }
-.nav-link.accred-link { color: var(--gold); }
 .nav-dropdown {
   display: none;
   position: absolute;
