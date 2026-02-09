@@ -148,4 +148,17 @@ document.addEventListener('DOMContentLoaded', function () {
       if (target) target.classList.add('active');
     });
   });
+
+  // --- CLICKABLE CARDS ---
+  document.querySelectorAll('.card').forEach(function (card) {
+    var link = card.querySelector('.card-link');
+    if (link && link.href) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'A') {
+          window.location.href = link.href;
+        }
+      });
+    }
+  });
 });
