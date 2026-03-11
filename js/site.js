@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="nav-item">
           <a class="nav-link" href="about.html">About</a>
           <div class="nav-dropdown">
-            <a href="about.html">Board of Directors</a>
+            <a href="about.html">Executive Council</a>
             <a href="rules.html">Rules &amp; Process</a>
             <a href="faqs.html">FAQs</a>
             <a href="ethics-cpd.html">Ethics &amp; CPD</a>
@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="nav-dropdown">
             <a href="accreditation.html">Accreditation Scheme</a>
             <a href="panels.html">Accredited Panels</a>
-            <a href="panel-members.html">Panel Members</a>
             <a href="training.html">Training Courses</a>
             <a href="register.html">Register Interest</a>
             <a href="scheme-terms.html">Scheme Terms</a>
@@ -79,9 +78,10 @@ document.addEventListener('DOMContentLoaded', function () {
     'nomination-fees.html': 'Services', 'admin-services.html': 'Services',
     'nomination-request.html': 'Services',
     'accreditation.html': 'Accreditation', 'panels.html': 'Accreditation',
-    'panel-members.html': 'Accreditation', 'training.html': 'Accreditation',
+    'training.html': 'Accreditation',
     'register.html': 'Accreditation', 'scheme-terms.html': 'Accreditation',
     'membership.html': 'Membership', 'membership-apply.html': 'Membership',
+    'privacy-policy.html': 'Contact', 'terms.html': 'Contact',
     'contact.html': 'Contact'
   };
   const activeLabel = navMap[currentPage];
@@ -140,6 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="footer-bottom">
       <span>&copy; ${new Date().getFullYear()} Construction Arbitration Centre (Asia Pacific). All rights reserved.</span>
       <span>
+        <a href="privacy-policy.html">Privacy Policy</a> &middot;
+        <a href="terms.html">Terms &amp; Conditions</a> &middot;
         <a href="scheme-terms.html">Scheme Terms</a> &middot;
         <a href="ethics-cpd.html">Ethics &amp; CPD</a> &middot;
         <a href="contact.html">Contact</a>
