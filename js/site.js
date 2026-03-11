@@ -1,5 +1,5 @@
 /* ============================================================
-   CACAP â€” Shared Navigation, Footer, and Interactivity
+   CACAP — Shared Navigation, Footer, and Interactivity
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,9 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="logo-text">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
         </a>
       </div>
-      <div><a class="btn-nom" href="nomination-request.html">Nomination Request</a></div>
+      <div class="header-right">
+        <a class="btn-nom" href="nomination-request.html">Nomination Request</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      </div>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <div class="nav-inner">
         <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
         <div class="nav-item">
@@ -26,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <a href="about.html">Board of Directors</a>
             <a href="rules.html">Rules &amp; Process</a>
             <a href="faqs.html">FAQs</a>
+            <a href="ethics-cpd.html">Ethics &amp; CPD</a>
           </div>
         </div>
         <div class="nav-item">
@@ -37,14 +41,16 @@ document.addEventListener('DOMContentLoaded', function () {
             <a href="expert-witness.html">Expert Witness</a>
             <a href="dispute-boards.html">Dispute Boards</a>
             <a href="nomination.html">Nomination</a>
-            <a href="admin-services.html">Dispute Resolution Administration</a>
+            <a href="nomination-fees.html">Nomination Fees</a>
+            <a href="admin-services.html">Administration</a>
           </div>
         </div>
         <div class="nav-item">
-          <a class="nav-link accred-link" href="accreditation.html">Accreditation</a>
+          <a class="nav-link" href="accreditation.html">Accreditation</a>
           <div class="nav-dropdown">
             <a href="accreditation.html">Accreditation Scheme</a>
             <a href="panels.html">Accredited Panels</a>
+            <a href="panel-members.html">Panel Members</a>
             <a href="training.html">Training Courses</a>
             <a href="register.html">Register Interest</a>
             <a href="scheme-terms.html">Scheme Terms</a>
@@ -66,15 +72,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navMap = {
     'index.html': 'Home',
-    'about.html': 'About', 'rules.html': 'About', 'faqs.html': 'About',
+    'about.html': 'About', 'rules.html': 'About', 'faqs.html': 'About', 'ethics-cpd.html': 'About',
     'services.html': 'Services', 'arbitration.html': 'Services', 'mediation.html': 'Services',
     'expert-determination.html': 'Services', 'expert-witness.html': 'Services',
-    'dispute-boards.html': 'Services',
-    'nomination.html': 'Services', 'admin-services.html': 'Services',
+    'dispute-boards.html': 'Services', 'nomination.html': 'Services',
+    'nomination-fees.html': 'Services', 'admin-services.html': 'Services',
     'nomination-request.html': 'Services',
     'accreditation.html': 'Accreditation', 'panels.html': 'Accreditation',
-    'training.html': 'Accreditation', 'register.html': 'Accreditation',
-    'scheme-terms.html': 'Accreditation',
+    'panel-members.html': 'Accreditation', 'training.html': 'Accreditation',
+    'register.html': 'Accreditation', 'scheme-terms.html': 'Accreditation',
     'membership.html': 'Membership', 'membership-apply.html': 'Membership',
     'contact.html': 'Contact'
   };
@@ -87,6 +93,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // --- MOBILE NAV TOGGLE ---
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('nav-open');
+      this.setAttribute('aria-expanded', mainNav.classList.contains('nav-open'));
+    });
+  }
+
   // --- INJECT FOOTER ---
   const footer = document.getElementById('site-footer');
   if (footer) {
@@ -94,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo-text" style="margin-bottom:16px;">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
-        <p style="font-size:14px;line-height:1.6;max-width:280px;">The premier institution for resolving construction and infrastructure disputes in the Asia Pacific region.</p>
+        <p style="font-size:14px;line-height:1.6;max-width:280px;">The appointing authority for construction and infrastructure dispute resolution across the Asia Pacific region.</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
@@ -106,26 +122,27 @@ document.addEventListener('DOMContentLoaded', function () {
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Accreditation</h4>
-        <a href="accreditation.html">Accreditation Scheme</a>
-        <a href="panels.html">Accredited Panels</a>
-        <a href="training.html">Training Courses</a>
-        <a href="register.html">Register Interest</a>
-        <a href="scheme-terms.html">Scheme Terms</a>
+        <h4>Services</h4>
+        <a href="arbitration.html">Arbitration</a>
+        <a href="mediation.html">Mediation</a>
+        <a href="expert-determination.html">Expert Determination</a>
+        <a href="expert-witness.html">Expert Witness</a>
+        <a href="dispute-boards.html">Dispute Boards</a>
+        <a href="nomination.html">Nomination</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">65/158 Chamnan Phenjati Business Center, Floor 19, Bangkok 10310, Thailand</p>
+        <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">65/158 Chamnan Phenjati Business Center, Floor 19, Huay Kwang, Bangkok 10310, Thailand</p>
         <a href="mailto:info@cacap.asia" style="color:#C8A45E;">info@cacap.asia</a>
         <p style="font-size:13px;margin-top:12px;">All enquiries should be made in writing initially.</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Construction Arbitration Centre (Asia Pacific). All rights reserved.</span>
+      <span>&copy; ${new Date().getFullYear()} Construction Arbitration Centre (Asia Pacific). All rights reserved.</span>
       <span>
         <a href="scheme-terms.html">Scheme Terms</a> &middot;
-        <a href="#">Privacy Policy</a> &middot;
-        <a href="#">Terms &amp; Conditions</a>
+        <a href="ethics-cpd.html">Ethics &amp; CPD</a> &middot;
+        <a href="contact.html">Contact</a>
       </span>
     </div>`;
   }
@@ -159,5 +176,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }
+  });
+
+  // --- SMOOTH SCROLL FOR ANCHOR LINKS ---
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 });

@@ -155,6 +155,13 @@ img { max-width: 100%; height: auto; }
   padding-left: 26px;
 }
 
+/* --- HEADER RIGHT --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 /* --- MOBILE NAV --- */
 .nav-toggle {
   display: none;
@@ -909,10 +916,27 @@ img { max-width: 100%; height: auto; }
   .footer-inner { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .nav-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .header-top { flex-direction: column; gap: 12px; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .hero { padding: 48px 24px; }
   .cards-grid { grid-template-columns: 1fr; }
   .board-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+  .nav-toggle { display: block; }
+  .main-nav { display: none; }
+  .main-nav.nav-open { display: block; }
+  .main-nav.nav-open .nav-inner {
+    flex-direction: column;
+    padding: 0;
+  }
+  .main-nav.nav-open .nav-item { border-bottom: 1px solid rgba(255,255,255,.05); }
+  .main-nav.nav-open .nav-link { padding: 14px 24px; }
+  .main-nav.nav-open .nav-dropdown {
+    display: block;
+    position: static;
+    box-shadow: none;
+    border-top: none;
+    background: var(--navy-light);
+  }
+  .main-nav.nav-open .nav-dropdown a { padding-left: 40px; }
+  .accred-disciplines { grid-template-columns: 1fr; }
 }

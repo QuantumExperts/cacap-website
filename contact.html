@@ -31,16 +31,15 @@
       </div>
       <div class="form-group">
         <h3 style="font-family:var(--hf);font-size:24px;color:var(--navy);margin-bottom:20px;">Send an Enquiry</h3>
-        <div class="form-row">
-          <div><label>First Name *</label><input type="text" placeholder="First Name"></div>
-          <div><label>Last Name *</label><input type="text" placeholder="Last Name"></div>
-        </div>
-        <label>Email *</label><input type="email" placeholder="Email Address">
-        <label>Organisation</label><input type="text" placeholder="Organisation (optional)">
-        <label>Nature of Enquiry *</label>
-        <select><option value="">Select</option><option>Nomination Request</option><option>Membership Enquiry</option><option>Accreditation Enquiry</option><option>Training Course Enquiry</option><option>Administrative Services Enquiry</option><option>General Enquiry</option></select>
-        <label>Message *</label><textarea placeholder="Your message"></textarea>
-        <a class="btn-p">Send Enquiry</a>
+        <form name="contact" method="POST" data-netlify="true">
+          <div class="form-row">
+            <div><label>First Name *<input type="text" name="firstName" placeholder="First Name" required></label></div>
+            <div><label>Last Name *<input type="text" name="lastName" placeholder="Last Name" required></label></div>
+          </div>
+          <label>Email *<input type="email" name="email" placeholder="Email Address" required></label>
+          <label>Message *<textarea name="message" placeholder="Your message" required></textarea></label>
+          <button type="submit" class="btn-p">Send Enquiry</button>
+        </form>
       </div>
     </div>
   </div>
