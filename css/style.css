@@ -231,7 +231,7 @@ textarea:focus-visible {
   font-weight: 500;
   letter-spacing: .8px;
   text-transform: uppercase;
-  transition: var(--tr));
+  transition: var(--tr);
   cursor: pointer;
   border-bottom: 3px solid transparent;
   white-space: nowrap;
@@ -533,7 +533,7 @@ textarea:focus-visible {
   letter-spacing: .5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: var(--tr-long));
+  transition: var(--tr-long);
   display: inline-block;
 }
 
@@ -721,7 +721,7 @@ textarea:focus-visible {
   margin-bottom: var(--sp-3);
   font-size: 28px;
   color: var(--gold);
-  transition: var(--tr-long));
+  transition: var(--tr-long);
   box-shadow: 0 4px 15px rgba(200,164,94,.15);
 }
 
@@ -752,7 +752,7 @@ textarea:focus-visible {
   font-weight: 600;
   letter-spacing: .5px;
   text-transform: uppercase;
-  transition: var(--tr));
+  transition: var(--tr);
   cursor: pointer;
   display: inline-block;
 }
@@ -860,7 +860,7 @@ textarea:focus-visible {
   letter-spacing: .5px;
   text-transform: uppercase;
   display: inline-block;
-  transition: var(--tr));
+  transition: var(--tr);
 }
 
 .svc-back a:hover {
@@ -1090,7 +1090,7 @@ textarea:focus-visible {
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: all var(--tr));
+  transition: all var(--tr);
   border: 2px solid transparent;
 }
 
@@ -1156,7 +1156,7 @@ textarea:focus-visible {
   letter-spacing: .5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all var(--tr));
+  transition: all var(--tr);
   border: 2px solid transparent;
   border-radius: 4px;
 }
@@ -1218,7 +1218,7 @@ textarea:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: color var(--tr));
+  transition: color var(--tr);
 }
 
 .faq-q:hover {
@@ -1230,7 +1230,7 @@ textarea:focus-visible {
   color: var(--gold);
   font-size: 28px;
   font-weight: 300;
-  transition: transform var(--tr));
+  transition: transform var(--tr);
   min-width: 32px;
   text-align: right;
 }
@@ -1320,7 +1320,7 @@ textarea:focus-visible {
   font-family: var(--bf);
   font-size: 15px;
   background: var(--white);
-  transition: all var(--tr));
+  transition: all var(--tr);
   -webkit-appearance: none;
   appearance: none;
 }
@@ -1362,7 +1362,7 @@ textarea:focus-visible {
   cursor: pointer;
   font-weight: 600;
   margin-right: 12px;
-  transition: var(--tr));
+  transition: var(--tr);
 }
 
 .form-group input[type="file"]::file-selector-button:hover {
@@ -1539,7 +1539,7 @@ textarea:focus-visible {
   padding: var(--sp-3);
   text-align: center;
   border-radius: 6px;
-  transition: all var(--tr));
+  transition: all var(--tr);
   border: 2px solid transparent;
 }
 
@@ -1663,7 +1663,7 @@ textarea:focus-visible {
   color: rgba(255,255,255,.75);
   font-size: 15px;
   padding: 6px 0;
-  transition: var(--tr));
+  transition: var(--tr);
 }
 
 .footer-col a:hover {
@@ -1686,7 +1686,7 @@ textarea:focus-visible {
   background: rgba(255,255,255,.1);
   border-radius: 50%;
   padding: 0;
-  transition: all var(--tr));
+  transition: all var(--tr);
 }
 
 .footer-social a:hover {
@@ -1721,7 +1721,7 @@ textarea:focus-visible {
 
 .footer-bottom a {
   color: var(--gold);
-  transition: var(--tr));
+  transition: var(--tr);
 }
 
 .footer-bottom a:hover {
