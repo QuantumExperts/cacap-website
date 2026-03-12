@@ -30,7 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
           <a class="nav-link" href="about.html">About</a>
           <div class="nav-dropdown" role="menu">
             <a href="about.html" role="menuitem">Executive Council</a>
-            <a href="rules.html" role="menuitem">Rules &amp; Process</a>
+            <a href="members.html" role="menuitem">Centre Representatives</a>
+            <a href="working-groups.html" role="menuitem">Working Groups</a>
+            <a href="rules.html" role="menuitem">Rules &amp; Procedures</a>
             <a href="faqs.html" role="menuitem">FAQs</a>
             <a href="ethics-cpd.html" role="menuitem">Ethics &amp; CPD</a>
           </div>
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navMap = {
     'index.html': 'Home',
-    'about.html': 'About', 'rules.html': 'About', 'faqs.html': 'About', 'ethics-cpd.html': 'About',
+    'about.html': 'About', 'members.html': 'About', 'working-groups.html': 'About', 'rules.html': 'About', 'faqs.html': 'About', 'ethics-cpd.html': 'About',
     'services.html': 'Services', 'arbitration.html': 'Services', 'mediation.html': 'Services',
     'expert-determination.html': 'Services', 'expert-witness.html': 'Services',
     'dispute-boards.html': 'Services', 'nomination.html': 'Services',

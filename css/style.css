@@ -1346,6 +1346,34 @@ textarea:focus-visible {
   color: var(--gold-dark);
 }
 
+.faq-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-family: var(--hf);
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-right: 14px;
+}
+
+.faq-label-q {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.faq-label-a {
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--border);
+  margin-top: 2px;
+  vertical-align: top;
+  float: left;
+}
+
 /* --- CONTACT / FORMS --- */
 .contact-grid {
   display: grid;
