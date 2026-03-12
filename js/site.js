@@ -8,58 +8,61 @@ document.addEventListener('DOMContentLoaded', function () {
   const header = document.getElementById('site-header');
   if (header) {
     header.innerHTML = `
+    <a class="skip-to-content" href="#main-content">Skip to main content</a>
     <div class="header-top">
       <div class="logo-area">
-        <a href="index.html">
-          <img src="logo-white.png" alt="CACAP Logo" class="logo-img">
+        <a href="index.html" aria-label="CACAP Home">
+          <img src="logo-white.png" alt="CACAP Logo" class="logo-img" width="70" height="70">
           <div class="logo-text">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
         </a>
       </div>
       <div class="header-right">
         <a class="btn-nom" href="nomination-request.html">Nomination Request</a>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle-icon"></span>
+        </button>
       </div>
     </div>
-    <nav class="main-nav" id="main-nav">
+    <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
       <div class="nav-inner">
         <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
-        <div class="nav-item">
+        <div class="nav-item has-dropdown">
           <a class="nav-link" href="about.html">About</a>
-          <div class="nav-dropdown">
-            <a href="about.html">Executive Council</a>
-            <a href="rules.html">Rules &amp; Process</a>
-            <a href="faqs.html">FAQs</a>
-            <a href="ethics-cpd.html">Ethics &amp; CPD</a>
+          <div class="nav-dropdown" role="menu">
+            <a href="about.html" role="menuitem">Executive Council</a>
+            <a href="rules.html" role="menuitem">Rules &amp; Process</a>
+            <a href="faqs.html" role="menuitem">FAQs</a>
+            <a href="ethics-cpd.html" role="menuitem">Ethics &amp; CPD</a>
           </div>
         </div>
-        <div class="nav-item">
+        <div class="nav-item has-dropdown">
           <a class="nav-link" href="services.html">Services</a>
-          <div class="nav-dropdown">
-            <a href="arbitration.html">Arbitration</a>
-            <a href="mediation.html">Mediation</a>
-            <a href="expert-determination.html">Expert Determination</a>
-            <a href="expert-witness.html">Expert Witness</a>
-            <a href="dispute-boards.html">Dispute Boards</a>
-            <a href="nomination.html">Nomination</a>
-            <a href="nomination-fees.html">Nomination Fees</a>
-            <a href="admin-services.html">Administration</a>
+          <div class="nav-dropdown" role="menu">
+            <a href="arbitration.html" role="menuitem">Arbitration</a>
+            <a href="mediation.html" role="menuitem">Mediation</a>
+            <a href="expert-determination.html" role="menuitem">Expert Determination</a>
+            <a href="expert-witness.html" role="menuitem">Expert Witness</a>
+            <a href="dispute-boards.html" role="menuitem">Dispute Boards</a>
+            <a href="nomination.html" role="menuitem">Nomination</a>
+            <a href="nomination-fees.html" role="menuitem">Nomination Fees</a>
+            <a href="admin-services.html" role="menuitem">Administration</a>
           </div>
         </div>
-        <div class="nav-item">
+        <div class="nav-item has-dropdown">
           <a class="nav-link" href="accreditation.html">Accreditation</a>
-          <div class="nav-dropdown">
-            <a href="accreditation.html">Accreditation Scheme</a>
-            <a href="panels.html">Accredited Panels</a>
-            <a href="training.html">Training Courses</a>
-            <a href="register.html">Register Interest</a>
-            <a href="scheme-terms.html">Scheme Terms</a>
+          <div class="nav-dropdown" role="menu">
+            <a href="accreditation.html" role="menuitem">Accreditation Scheme</a>
+            <a href="panels.html" role="menuitem">Accredited Panels</a>
+            <a href="training.html" role="menuitem">Training Courses</a>
+            <a href="register.html" role="menuitem">Register Interest</a>
+            <a href="scheme-terms.html" role="menuitem">Scheme Terms</a>
           </div>
         </div>
-        <div class="nav-item">
+        <div class="nav-item has-dropdown">
           <a class="nav-link" href="membership.html">Membership</a>
-          <div class="nav-dropdown">
-            <a href="membership.html">Join CACAP</a>
-            <a href="membership-apply.html">Apply for Membership</a>
+          <div class="nav-dropdown" role="menu">
+            <a href="membership.html" role="menuitem">Join CACAP</a>
+            <a href="membership-apply.html" role="menuitem">Apply for Membership</a>
           </div>
         </div>
         <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
@@ -91,6 +94,13 @@ document.addEventListener('DOMContentLoaded', function () {
         link.classList.add('active');
       }
     });
+    // Also highlight dropdown items
+    document.querySelectorAll('.nav-dropdown a').forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href === currentPage) {
+        link.classList.add('active');
+      }
+    });
   }
 
   // --- MOBILE NAV TOGGLE ---
@@ -98,8 +108,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const mainNav = document.getElementById('main-nav');
   if (navToggle && mainNav) {
     navToggle.addEventListener('click', function () {
-      mainNav.classList.toggle('nav-open');
-      this.setAttribute('aria-expanded', mainNav.classList.contains('nav-open'));
+      var isOpen = mainNav.classList.toggle('nav-open');
+      this.classList.toggle('is-active', isOpen);
+      this.setAttribute('aria-expanded', isOpen);
+      // Prevent body scroll when nav is open
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    // Close nav on link click (mobile)
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          mainNav.classList.remove('nav-open');
+          navToggle.classList.remove('is-active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
     });
   }
 
@@ -110,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo-text" style="margin-bottom:16px;">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
-        <p style="font-size:14px;line-height:1.6;max-width:280px;">The appointing authority for construction and infrastructure dispute resolution across the Asia Pacific region.</p>
+        <p style="font-size:14px;line-height:1.7;max-width:300px;margin-bottom:24px;">The appointing authority for construction and infrastructure dispute resolution across the Asia Pacific region.</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
@@ -128,22 +152,20 @@ document.addEventListener('DOMContentLoaded', function () {
         <a href="expert-determination.html">Expert Determination</a>
         <a href="expert-witness.html">Expert Witness</a>
         <a href="dispute-boards.html">Dispute Boards</a>
-        <a href="nomination.html">Nomination</a>
+        <a href="admin-services.html">Administration</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p style="font-size:14px;line-height:1.6;margin-bottom:8px;">65/158 Chamnan Phenjati Business Center, Floor 19, Huay Kwang, Bangkok 10310, Thailand</p>
-        <a href="mailto:info@cacap.asia" style="color:#C8A45E;">info@cacap.asia</a>
-        <p style="font-size:13px;margin-top:12px;">All enquiries should be made in writing initially.</p>
+        <p style="font-size:14px;line-height:1.7;margin-bottom:12px;">Construction Arbitration Centre<br>(Asia Pacific)<br>65/158 Chamnan Phenjati<br>Business Center, Floor 19<br>Huay Kwang, Bangkok 10310<br>Thailand</p>
+        <a href="mailto:info@cacap.asia" style="color:var(--gold);font-weight:600;">info@cacap.asia</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; ${new Date().getFullYear()} Construction Arbitration Centre (Asia Pacific). All rights reserved.</span>
       <span>
         <a href="privacy-policy.html">Privacy Policy</a> &middot;
-        <a href="terms.html">Terms &amp; Conditions</a> &middot;
+        <a href="terms.html">Terms</a> &middot;
         <a href="scheme-terms.html">Scheme Terms</a> &middot;
-        <a href="ethics-cpd.html">Ethics &amp; CPD</a> &middot;
         <a href="contact.html">Contact</a>
       </span>
     </div>`;
@@ -172,8 +194,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var link = card.querySelector('.card-link');
     if (link && link.href) {
       card.style.cursor = 'pointer';
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
       card.addEventListener('click', function (e) {
         if (e.target.tagName !== 'A') {
+          window.location.href = link.href;
+        }
+      });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
           window.location.href = link.href;
         }
       });
@@ -188,6 +218,49 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    });
+  });
+
+  // --- SCROLL ANIMATIONS ---
+  if ('IntersectionObserver' in window) {
+    var animateObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          animateObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.card, .accred-card, .board-member, .info-box, .svc-cta, .cta-box').forEach(function (el) {
+      el.classList.add('animate-on-scroll');
+      animateObserver.observe(el);
+    });
+  }
+
+  // --- FORM VALIDATION ENHANCEMENT ---
+  document.querySelectorAll('form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      var valid = true;
+      form.querySelectorAll('[required]').forEach(function (field) {
+        if (!field.value.trim()) {
+          field.classList.add('form-error');
+          valid = false;
+        } else {
+          field.classList.remove('form-error');
+        }
+      });
+      if (!valid) {
+        e.preventDefault();
+        var firstError = form.querySelector('.form-error');
+        if (firstError) firstError.focus();
+      }
+    });
+    // Clear error on input
+    form.querySelectorAll('[required]').forEach(function (field) {
+      field.addEventListener('input', function () {
+        if (this.value.trim()) this.classList.remove('form-error');
+      });
     });
   });
 });

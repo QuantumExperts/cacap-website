@@ -1,0 +1,505 @@
+<svg viewBox="0 0 1920 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradient for upper sky section -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#080f1d;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0D1B2A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B2D45;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Radial gradient for golden glow effect -->
+    <radialGradient id="goldenGlow" cx="30%" cy="40%">
+      <stop offset="0%" style="stop-color:#C8A45E;stop-opacity:0.15" />
+      <stop offset="50%" style="stop-color:#C8A45E;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#C8A45E;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Blueprint grid pattern -->
+    <pattern id="gridPattern" x="40" y="40" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none"/>
+      <circle cx="20" cy="20" r="0.5" fill="#C8A45E" opacity="0.08"/>
+      <line x1="0" y1="20" x2="40" y2="20" stroke="#C8A45E" stroke-width="0.3" opacity="0.05"/>
+      <line x1="20" y1="0" x2="20" y2="40" stroke="#C8A45E" stroke-width="0.3" opacity="0.05"/>
+    </pattern>
+
+    <!-- Filter for subtle glow on buildings -->
+    <filter id="buildingGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1920" height="600" fill="url(#skyGradient)"/>
+
+  <!-- Golden glow overlay -->
+  <ellipse cx="1440" cy="100" rx="800" ry="400" fill="url(#goldenGlow)"/>
+
+  <!-- Blueprint grid overlay -->
+  <rect width="1920" height="600" fill="url(#gridPattern)"/>
+
+  <!-- Lower building base layer for depth -->
+  <rect y="380" width="1920" height="220" fill="#050A13" opacity="0.3"/>
+
+  <!-- CITYSCAPE SILHOUETTES -->
+
+  <!-- Far left cluster - shorter buildings -->
+  <g opacity="0.85">
+    <!-- Building 1 -->
+    <rect x="20" y="420" width="80" height="180" fill="#0A1520"/>
+    <rect x="30" y="435" width="8" height="10" fill="#1B2D45" opacity="0.6"/>
+    <rect x="50" y="435" width="8" height="10" fill="#1B2D45" opacity="0.6"/>
+    <rect x="70" y="435" width="8" height="10" fill="#1B2D45" opacity="0.6"/>
+    <rect x="30" y="455" width="8" height="10" fill="#1B2D45" opacity="0.6"/>
+    <rect x="50" y="455" width="8" height="10" fill="#1B2D45" opacity="0.6"/>
+    <rect x="70" y="455" width="8" height="10" fill="#1B2D45" opacity="0.6"/>
+
+    <!-- Building 2 -->
+    <rect x="110" y="380" width="75" height="220" fill="#0A1520"/>
+    <circle cx="147" cy="420" r="8" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="147" cy="450" r="8" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="147" cy="480" r="8" fill="#1B2D45" opacity="0.5"/>
+  </g>
+
+  <!-- Left-center modern tower with crane -->
+  <g opacity="0.9">
+    <!-- Tall building -->
+    <polygon points="220,280 300,300 300,600 220,600" fill="#0D1B2A"/>
+    <polygon points="220,280 300,300 300,600 220,600" fill="#1B2D45" opacity="0.4"/>
+
+    <!-- Window pattern -->
+    <g opacity="0.5">
+      <rect x="235" y="320" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="320" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="345" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="345" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="370" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="370" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="395" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="395" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="420" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="420" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="445" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="445" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="470" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="470" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="495" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="495" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="520" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="520" width="12" height="12" fill="#C8A45E"/>
+      <rect x="235" y="545" width="12" height="12" fill="#C8A45E"/>
+      <rect x="260" y="545" width="12" height="12" fill="#C8A45E"/>
+    </g>
+
+    <!-- Construction crane 1 -->
+    <g stroke="#C8A45E" stroke-width="2" fill="none" opacity="0.7">
+      <line x1="285" y1="240" x2="285" y2="80"/>
+      <line x1="285" y1="100" x2="380" y2="60"/>
+      <line x1="285" y1="120" x2="250" y2="75"/>
+      <circle cx="285" cy="240" r="4" fill="#C8A45E" opacity="0.8"/>
+      <polygon points="380,60 375,65 370,62" fill="#C8A45E" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Center-left medium building complex -->
+  <g opacity="0.88">
+    <rect x="360" y="360" width="95" height="240" fill="#0A1520"/>
+    <polygon points="455,360 490,340 490,600 455,600" fill="#0D1B2A" opacity="0.9"/>
+
+    <!-- Angled roof details -->
+    <polygon points="360,360 420,350 455,360" fill="#1B2D45" opacity="0.6"/>
+
+    <!-- Grid of windows -->
+    <g opacity="0.45">
+      <rect x="375" y="380" width="10" height="10" fill="#C8A45E"/>
+      <rect x="395" y="380" width="10" height="10" fill="#C8A45E"/>
+      <rect x="415" y="380" width="10" height="10" fill="#C8A45E"/>
+      <rect x="435" y="380" width="10" height="10" fill="#C8A45E"/>
+
+      <rect x="375" y="410" width="10" height="10" fill="#C8A45E"/>
+      <rect x="395" y="410" width="10" height="10" fill="#C8A45E"/>
+      <rect x="415" y="410" width="10" height="10" fill="#C8A45E"/>
+      <rect x="435" y="410" width="10" height="10" fill="#C8A45E"/>
+
+      <rect x="375" y="440" width="10" height="10" fill="#C8A45E"/>
+      <rect x="395" y="440" width="10" height="10" fill="#C8A45E"/>
+      <rect x="415" y="440" width="10" height="10" fill="#C8A45E"/>
+      <rect x="435" y="440" width="10" height="10" fill="#C8A45E"/>
+
+      <rect x="375" y="470" width="10" height="10" fill="#C8A45E"/>
+      <rect x="395" y="470" width="10" height="10" fill="#C8A45E"/>
+      <rect x="415" y="470" width="10" height="10" fill="#C8A45E"/>
+      <rect x="435" y="470" width="10" height="10" fill="#C8A45E"/>
+
+      <rect x="375" y="500" width="10" height="10" fill="#C8A45E"/>
+      <rect x="395" y="500" width="10" height="10" fill="#C8A45E"/>
+      <rect x="415" y="500" width="10" height="10" fill="#C8A45E"/>
+      <rect x="435" y="500" width="10" height="10" fill="#C8A45E"/>
+
+      <rect x="375" y="530" width="10" height="10" fill="#C8A45E"/>
+      <rect x="395" y="530" width="10" height="10" fill="#C8A45E"/>
+      <rect x="415" y="530" width="10" height="10" fill="#C8A45E"/>
+      <rect x="435" y="530" width="10" height="10" fill="#C8A45E"/>
+
+      <rect x="375" y="560" width="10" height="10" fill="#C8A45E"/>
+      <rect x="395" y="560" width="10" height="10" fill="#C8A45E"/>
+      <rect x="415" y="560" width="10" height="10" fill="#C8A45E"/>
+      <rect x="435" y="560" width="10" height="10" fill="#C8A45E"/>
+    </g>
+  </g>
+
+  <!-- Center tall skyscraper -->
+  <g opacity="0.95">
+    <polygon points="540,200 620,180 620,600 540,600" fill="#0D1B2A"/>
+    <polygon points="540,200 620,180 620,600 540,600" fill="#1B2D45" opacity="0.35"/>
+
+    <!-- Vertical lines for modern architecture -->
+    <line x1="560" y1="200" x2="560" y2="600" stroke="#C8A45E" stroke-width="1.5" opacity="0.4"/>
+    <line x1="580" y1="200" x2="580" y2="600" stroke="#C8A45E" stroke-width="1.5" opacity="0.4"/>
+    <line x1="600" y1="200" x2="600" y2="600" stroke="#C8A45E" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Window grid -->
+    <g opacity="0.5">
+      <rect x="552" y="220" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="220" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="220" width="8" height="8" fill="#C8A45E"/>
+      <rect x="552" y="240" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="240" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="240" width="8" height="8" fill="#C8A45E"/>
+
+      <rect x="552" y="270" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="270" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="270" width="8" height="8" fill="#C8A45E"/>
+      <rect x="552" y="290" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="290" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="290" width="8" height="8" fill="#C8A45E"/>
+
+      <rect x="552" y="320" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="320" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="320" width="8" height="8" fill="#C8A45E"/>
+      <rect x="552" y="340" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="340" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="340" width="8" height="8" fill="#C8A45E"/>
+
+      <rect x="552" y="370" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="370" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="370" width="8" height="8" fill="#C8A45E"/>
+      <rect x="552" y="390" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="390" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="390" width="8" height="8" fill="#C8A45E"/>
+
+      <rect x="552" y="420" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="420" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="420" width="8" height="8" fill="#C8A45E"/>
+      <rect x="552" y="440" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="440" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="440" width="8" height="8" fill="#C8A45E"/>
+
+      <rect x="552" y="470" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="470" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="470" width="8" height="8" fill="#C8A45E"/>
+      <rect x="552" y="490" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="490" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="490" width="8" height="8" fill="#C8A45E"/>
+
+      <rect x="552" y="520" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="520" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="520" width="8" height="8" fill="#C8A45E"/>
+      <rect x="552" y="540" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="540" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="540" width="8" height="8" fill="#C8A45E"/>
+
+      <rect x="552" y="570" width="8" height="8" fill="#C8A45E"/>
+      <rect x="572" y="570" width="8" height="8" fill="#C8A45E"/>
+      <rect x="592" y="570" width="8" height="8" fill="#C8A45E"/>
+    </g>
+
+    <!-- Top spire -->
+    <polygon points="575,180 570,200 580,200" fill="#C8A45E" opacity="0.6"/>
+  </g>
+
+  <!-- Center-right modern building with crane -->
+  <g opacity="0.92">
+    <rect x="680" y="320" width="110" height="280" fill="#0A1520"/>
+    <polygon points="680,320 750,300 790,320" fill="#1B2D45" opacity="0.7"/>
+
+    <!-- Horizontal ribbon windows -->
+    <g opacity="0.48">
+      <rect x="690" y="340" width="80" height="6" fill="#C8A45E"/>
+      <rect x="690" y="370" width="80" height="6" fill="#C8A45E"/>
+      <rect x="690" y="400" width="80" height="6" fill="#C8A45E"/>
+      <rect x="690" y="430" width="80" height="6" fill="#C8A45E"/>
+      <rect x="690" y="460" width="80" height="6" fill="#C8A45E"/>
+      <rect x="690" y="490" width="80" height="6" fill="#C8A45E"/>
+      <rect x="690" y="520" width="80" height="6" fill="#C8A45E"/>
+      <rect x="690" y="550" width="80" height="6" fill="#C8A45E"/>
+    </g>
+
+    <!-- Construction crane 2 -->
+    <g stroke="#C8A45E" stroke-width="2.5" fill="none" opacity="0.75">
+      <line x1="760" y1="300" x2="760" y2="120"/>
+      <line x1="760" y1="140" x2="860" y2="100"/>
+      <line x1="760" y1="160" x2="700" y2="110"/>
+      <circle cx="760" cy="300" r="5" fill="#C8A45E" opacity="0.85"/>
+      <polygon points="860,100 850,108 845,102" fill="#C8A45E" opacity="0.75"/>
+    </g>
+  </g>
+
+  <!-- Right-center tall tower -->
+  <g opacity="0.90">
+    <polygon points="850,250 920,230 920,600 850,600" fill="#0D1B2A"/>
+    <polygon points="850,250 920,230 920,600 850,600" fill="#1B2D45" opacity="0.32"/>
+
+    <!-- Diagonal cross-hatch pattern for modern look -->
+    <g stroke="#C8A45E" stroke-width="1" opacity="0.35" fill="none">
+      <line x1="860" y1="250" x2="860" y2="600"/>
+      <line x1="875" y1="250" x2="875" y2="600"/>
+      <line x1="890" y1="250" x2="890" y2="600"/>
+      <line x1="905" y1="250" x2="905" y2="600"/>
+    </g>
+
+    <!-- Window pattern -->
+    <g opacity="0.52">
+      <rect x="862" y="270" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="270" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="270" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="270" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="295" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="295" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="295" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="295" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="320" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="320" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="320" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="320" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="345" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="345" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="345" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="345" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="370" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="370" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="370" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="370" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="395" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="395" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="395" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="395" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="420" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="420" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="420" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="420" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="445" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="445" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="445" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="445" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="470" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="470" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="470" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="470" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="495" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="495" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="495" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="495" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="520" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="520" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="520" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="520" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="545" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="545" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="545" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="545" width="7" height="7" fill="#C8A45E"/>
+
+      <rect x="862" y="570" width="7" height="7" fill="#C8A45E"/>
+      <rect x="877" y="570" width="7" height="7" fill="#C8A45E"/>
+      <rect x="892" y="570" width="7" height="7" fill="#C8A45E"/>
+      <rect x="907" y="570" width="7" height="7" fill="#C8A45E"/>
+    </g>
+  </g>
+
+  <!-- Right cluster of buildings -->
+  <g opacity="0.87">
+    <!-- Building 1 -->
+    <rect x="1000" y="380" width="85" height="220" fill="#0A1520"/>
+    <circle cx="1020" cy="420" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1040" cy="420" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1060" cy="420" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1020" cy="450" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1040" cy="450" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1060" cy="450" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1020" cy="480" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1040" cy="480" r="7" fill="#1B2D45" opacity="0.5"/>
+    <circle cx="1060" cy="480" r="7" fill="#1B2D45" opacity="0.5"/>
+
+    <!-- Building 2 -->
+    <polygon points="1140,340 1210,320 1210,600 1140,600" fill="#0D1B2A" opacity="0.9"/>
+    <g opacity="0.45">
+      <rect x="1155" y="360" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="360" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="360" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1155" y="390" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="390" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="390" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1155" y="420" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="420" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="420" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1155" y="450" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="450" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="450" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1155" y="480" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="480" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="480" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1155" y="510" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="510" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="510" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1155" y="540" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="540" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="540" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1155" y="570" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1175" y="570" width="10" height="10" fill="#C8A45E"/>
+      <rect x="1195" y="570" width="10" height="10" fill="#C8A45E"/>
+    </g>
+  </g>
+
+  <!-- Far right buildings -->
+  <g opacity="0.83">
+    <!-- Building 3 -->
+    <rect x="1280" y="420" width="75" height="180" fill="#0A1520"/>
+    <g opacity="0.5">
+      <rect x="1295" y="440" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1315" y="440" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1335" y="440" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1295" y="465" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1315" y="465" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1335" y="465" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1295" y="490" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1315" y="490" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1335" y="490" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1295" y="515" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1315" y="515" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1335" y="515" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1295" y="540" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1315" y="540" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1335" y="540" width="9" height="9" fill="#C8A45E"/>
+    </g>
+
+    <!-- Building 4 -->
+    <rect x="1390" y="380" width="90" height="220" fill="#0D1B2A" opacity="0.85"/>
+    <g opacity="0.42">
+      <rect x="1405" y="405" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1430" y="405" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1455" y="405" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1405" y="435" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1430" y="435" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1455" y="435" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1405" y="465" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1430" y="465" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1455" y="465" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1405" y="495" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1430" y="495" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1455" y="495" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1405" y="525" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1430" y="525" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1455" y="525" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1405" y="555" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1430" y="555" width="11" height="11" fill="#C8A45E"/>
+      <rect x="1455" y="555" width="11" height="11" fill="#C8A45E"/>
+    </g>
+  </g>
+
+  <!-- Far right tall tower -->
+  <g opacity="0.88">
+    <polygon points="1550,290 1630,270 1630,600 1550,600" fill="#0A1520"/>
+    <g opacity="0.48">
+      <rect x="1565" y="310" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="310" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="310" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="340" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="340" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="340" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="370" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="370" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="370" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="400" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="400" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="400" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="430" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="430" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="430" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="460" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="460" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="460" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="490" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="490" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="490" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="520" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="520" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="520" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="550" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="550" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="550" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1565" y="580" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1585" y="580" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1605" y="580" width="9" height="9" fill="#C8A45E"/>
+    </g>
+  </g>
+
+  <!-- Rightmost cluster -->
+  <g opacity="0.82">
+    <!-- Building -->
+    <rect x="1720" y="420" width="80" height="180" fill="#0A1520"/>
+    <g opacity="0.45">
+      <rect x="1738" y="445" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1758" y="445" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1738" y="470" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1758" y="470" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1738" y="495" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1758" y="495" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1738" y="520" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1758" y="520" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1738" y="545" width="9" height="9" fill="#C8A45E"/>
+      <rect x="1758" y="545" width="9" height="9" fill="#C8A45E"/>
+    </g>
+
+    <!-- Building 2 -->
+    <polygon points="1850,390 1920,370 1920,600 1850,600" fill="#0D1B2A" opacity="0.88"/>
+  </g>
+
+  <!-- GOLD ACCENT HORIZON LINE -->
+  <line x1="0" y1="365" x2="1920" y2="365" stroke="#C8A45E" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- Subtle bridge arch element (geometric detail) -->
+  <g stroke="#C8A45E" stroke-width="1.5" fill="none" opacity="0.25">
+    <path d="M 600,500 Q 660,420 720,500" />
+    <path d="M 650,520 L 650,500" />
+    <path d="M 670,520 L 670,500" />
+    <path d="M 690,520 L 690,500" />
+  </g>
+
+  <!-- Additional subtle geometric elements for sophistication -->
+  <g stroke="#C8A45E" stroke-width="1" opacity="0.2" fill="none">
+    <!-- Geometric lines -->
+    <line x1="1200" y1="180" x2="1350" y2="280"/>
+    <line x1="1350" y1="180" x2="1200" y2="280"/>
+  </g>
+
+  <!-- Vignette effect for depth -->
+  <radialGradient id="vignetteGrad" cx="50%" cy="30%">
+    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0" />
+    <stop offset="100%" style="stop-color:#080f1d;stop-opacity:0.15" />
+  </radialGradient>
+  <rect width="1920" height="600" fill="url(#vignetteGrad)" opacity="0.6"/>
+</svg>
