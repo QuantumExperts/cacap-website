@@ -456,13 +456,13 @@ textarea:focus-visible {
 }
 
 .hero-sm p {
-  color: rgba(255,255,255,.88);
+  color: rgba(255,255,255,.92);
   font-size: 18px;
   font-weight: 400;
-  max-width: 640px;
+  max-width: 780px;
   margin: 0 auto;
-  line-height: 1.65;
-  letter-spacing: 0.2px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
 }
 
 .hero-sm {
