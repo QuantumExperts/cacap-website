@@ -266,7 +266,6 @@ textarea:focus-visible {
 }
 
 .nav-dropdown {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -276,14 +275,16 @@ textarea:focus-visible {
   z-index: 100;
   border-top: 3px solid var(--gold);
   opacity: 0;
+  visibility: hidden;
   transform: translateY(-8px);
-  transition: opacity var(--tr), transform var(--tr);
+  transition: opacity var(--tr), transform var(--tr), visibility var(--tr);
   pointer-events: none;
 }
 
-.nav-item:hover .nav-dropdown {
-  display: block;
+.nav-item:hover .nav-dropdown,
+.nav-item:focus-within .nav-dropdown {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
 }
@@ -328,33 +329,32 @@ textarea:focus-visible {
 
 /* --- HERO --- */
 .hero {
-  background:
-    linear-gradient(135deg, rgba(8,15,29,.88) 0%, rgba(13,27,42,.82) 40%, rgba(27,45,69,.78) 100%),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80') center/cover no-repeat;
+  background: var(--navy);
   min-height: 580px;
   padding: var(--sp-12) var(--sp-3);
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
+/* Aerial Bangkok photo — right side, fades into solid navy on left */
 .hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 L30 0 L60 30 L30 60Z' fill='none' stroke='rgba(200,164,94,0.02)' stroke-width='1'/%3E%3C/svg%3E") repeat,
-    radial-gradient(ellipse at 30% 50%, rgba(200,164,94,.04) 0%, transparent 60%);
-  pointer-events: none;
-  animation: heroShift 40s linear infinite;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1920&q=80') center/cover no-repeat;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 12%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0.9) 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 12%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,0.9) 100%);
+  opacity: 0.45;
+  z-index: 1;
 }
 
+/* Gold accent line at bottom */
 .hero::after {
   content: '';
   position: absolute;
@@ -362,20 +362,16 @@ textarea:focus-visible {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, transparent 5%, var(--gold) 50%, transparent 95%);
-  z-index: 2;
-}
-
-@keyframes heroShift {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-30px, -30px); }
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-muted) 40%, transparent 80%);
+  z-index: 4;
 }
 
 .hero-content {
   position: relative;
-  max-width: 800px;
+  max-width: var(--mw);
+  width: 100%;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 3;
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -408,7 +404,7 @@ textarea:focus-visible {
   font-size: 17px;
   font-weight: 300;
   max-width: 600px;
-  margin: 0 auto var(--sp-5);
+  margin: 0 0 var(--sp-5) 0;
   line-height: 1.7;
 }
 
@@ -457,7 +453,7 @@ textarea:focus-visible {
 .hero-buttons {
   display: flex;
   gap: var(--sp-2);
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
@@ -1999,19 +1995,26 @@ textarea:focus-visible {
   }
 
   .main-nav.nav-open .nav-dropdown {
-    display: none;
     position: static;
     box-shadow: none;
     border-top: none;
     background: var(--navy-light);
-    opacity: 1;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
     transform: none;
     margin: 0;
+    transition: opacity 0.2s ease, max-height 0.3s ease, visibility 0.2s ease;
+    pointer-events: none;
   }
 
   .main-nav.nav-open .nav-item:hover .nav-dropdown,
   .main-nav.nav-open .nav-item.open .nav-dropdown {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    pointer-events: auto;
   }
 
   .main-nav.nav-open .nav-dropdown a {
@@ -2061,6 +2064,14 @@ textarea:focus-visible {
   .hero {
     padding: var(--sp-6) var(--sp-2);
     min-height: 380px;
+    text-align: center;
+  }
+
+  .hero::before {
+    width: 100%;
+    opacity: 0.3;
+    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 100%);
   }
 
   .hero h1 {
@@ -2069,11 +2080,12 @@ textarea:focus-visible {
 
   .hero p {
     font-size: 15px;
-    margin-bottom: var(--sp-4);
+    margin: 0 auto var(--sp-4);
   }
 
   .hero-buttons {
     gap: var(--sp-1);
+    justify-content: center;
   }
 
   .btn-p,
