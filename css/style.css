@@ -60,8 +60,8 @@ html {
 
 body {
   font-family: var(--bf);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--text);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
@@ -186,11 +186,12 @@ textarea:focus-visible {
 
 .logo-text span {
   display: block;
-  color: var(--gold);
-  font-size: 13px;
+  color: #E0C068;
+  font-size: 14px;
   letter-spacing: 3.5px;
   font-weight: 700;
   margin-top: 2px;
+  text-shadow: 0 0 8px rgba(224,192,104,0.3);
 }
 
 .btn-nom {
@@ -238,7 +239,7 @@ textarea:focus-visible {
   gap: 6px;
   padding: var(--sp-2) var(--sp-2);
   color: rgba(255,255,255,.85);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: .8px;
   text-transform: uppercase;
@@ -302,9 +303,9 @@ textarea:focus-visible {
 
 .nav-dropdown a {
   display: block;
-  padding: var(--sp-1) var(--sp-2);
-  color: rgba(255,255,255,.8);
-  font-size: 13px;
+  padding: 10px var(--sp-3);
+  color: rgba(255,255,255,.85);
+  font-size: 15px;
   transition: var(--tr);
   border-bottom: 1px solid rgba(255,255,255,.05);
 }
@@ -312,7 +313,7 @@ textarea:focus-visible {
 .nav-dropdown a:hover {
   background: var(--navy-light);
   color: var(--gold);
-  padding-left: 28px;
+  padding-left: var(--sp-4);
 }
 
 /* --- HEADER RIGHT --- */
@@ -703,7 +704,7 @@ textarea:focus-visible {
 
 .section-sub {
   color: var(--gold);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -712,10 +713,10 @@ textarea:focus-visible {
 
 .section-intro {
   color: var(--text-light);
-  font-size: 17px;
+  font-size: 18px;
   max-width: 700px;
   margin-bottom: var(--sp-6);
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .section-dark .section-intro {
@@ -807,14 +808,14 @@ textarea:focus-visible {
 
 .card p {
   color: var(--text-light);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.75;
   margin-bottom: var(--sp-2);
 }
 
 .card-link {
   color: var(--gold);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: .5px;
   text-transform: uppercase;
@@ -879,8 +880,8 @@ textarea:focus-visible {
 
 .svc-content p {
   color: var(--text-light);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.75;
   margin-bottom: var(--sp-2);
 }
 
@@ -891,8 +892,8 @@ textarea:focus-visible {
 
 .svc-content li {
   color: var(--text-light);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.75;
   margin-bottom: var(--sp-1);
 }
 
@@ -1080,7 +1081,7 @@ textarea:focus-visible {
 /* --- BOARD MEMBERS --- */
 .board-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-3);
   margin-top: var(--sp-5);
 }
@@ -1133,7 +1134,7 @@ textarea:focus-visible {
 
 .board-member .role {
   color: var(--gold);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: .5px;
   text-transform: uppercase;
@@ -1141,7 +1142,7 @@ textarea:focus-visible {
 
 .board-bio {
   color: var(--text-light);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
   margin-top: var(--sp-1);
   font-style: italic;
@@ -1886,8 +1887,8 @@ textarea:focus-visible {
 }
 
 .text-body {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--text-light);
   margin-bottom: var(--sp-2);
 }
