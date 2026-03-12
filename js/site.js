@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'nomination-fees.html': 'Services', 'admin-services.html': 'Services',
     'nomination-request.html': 'Services',
     'accreditation.html': 'Accreditation', 'panels.html': 'Accreditation',
-    'training.html': 'Accreditation',
+    'panel-members.html': 'Accreditation', 'training.html': 'Accreditation',
     'register.html': 'Accreditation', 'scheme-terms.html': 'Accreditation',
     'membership.html': 'Membership', 'membership-apply.html': 'Membership',
     'privacy-policy.html': 'Contact', 'terms.html': 'Contact',
