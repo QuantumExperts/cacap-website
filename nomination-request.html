@@ -23,7 +23,9 @@
   <div class="section-inner" style="max-width: 760px;">
     <h2 class="section-title">Nomination Request Form</h2>
 
-    <form action="https://formsubmit.co/info@cacap.asia" method="POST" name="nomination-request" class="form-group">
+    <form name="nomination-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thank-you.html" class="form-group">
+      <input type="hidden" name="form-name" value="nomination-request">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
       <label for="company">Company Name <span style="color: var(--gold);">*</span></label>
       <input type="text" id="company" name="company-name" placeholder="Company Name" required>
@@ -57,7 +59,8 @@
       <textarea id="dispute-nature" name="subject-or-nature-of-dispute" placeholder="Please provide details of the dispute, including required expertise and relevant contractual provisions" required style="min-height: 120px;"></textarea>
 
       <label for="documents">Supporting Documents</label>
-      <input type="file" id="documents" name="supporting-documents">
+      <p style="font-size: 14px; color: var(--text-light); margin-bottom: 8px;">Upload relevant documents such as the contract, arbitration clause, or correspondence. Multiple files accepted (PDF, DOC, DOCX). Maximum 10MB per file.</p>
+      <input type="file" id="documents" name="supporting-documents" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.tif,.tiff">
 
       <div class="form-check">
         <input type="checkbox" id="confirm" name="information-accurate" required>

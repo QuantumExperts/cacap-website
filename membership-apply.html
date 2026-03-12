@@ -23,7 +23,9 @@
   <div class="section-inner" style="max-width: 760px;">
     <h2 class="section-title">Membership Application Form</h2>
 
-    <form action="https://formsubmit.co/info@cacap.asia" method="POST" name="membership-application" class="form-group">
+    <form name="membership-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="form-group">
+      <input type="hidden" name="form-name" value="membership-application">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
       <label for="fullname">Full Name <span style="color: var(--gold);">*</span></label>
       <input type="text" id="fullname" name="full-name" placeholder="Full Name" required>
