@@ -238,6 +238,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // --- HEADER COMPACT ON SCROLL ---
+  var siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    var scrollThreshold = 80;
+    var lastScrollY = 0;
+    window.addEventListener('scroll', function () {
+      var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollY > scrollThreshold) {
+        siteHeader.classList.add('header-compact');
+      } else {
+        siteHeader.classList.remove('header-compact');
+      }
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+  }
+
   // --- HERO SLIDE ROTATION ---
   var heroSlides = document.getElementById('hero-slides');
   if (heroSlides) {

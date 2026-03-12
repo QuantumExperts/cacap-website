@@ -133,6 +133,17 @@ textarea:focus-visible {
   max-width: var(--mw);
   margin: 0 auto;
   padding: var(--sp-2) var(--sp-3);
+  max-height: 110px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+}
+
+/* When scrolled: collapse the logo bar, keep only the nav */
+.site-header.header-compact .header-top {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
 }
 
 .logo-area {
@@ -165,20 +176,21 @@ textarea:focus-visible {
 .logo-text {
   color: var(--white);
   font-family: var(--hf);
-  font-size: 17.5px;
+  font-size: 19px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  line-height: 1.3;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  line-height: 1.35;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .logo-text span {
   display: block;
   color: var(--gold);
-  font-size: 12px;
-  letter-spacing: 2.8px;
-  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 3.5px;
+  font-weight: 700;
+  margin-top: 2px;
 }
 
 .btn-nom {
@@ -374,7 +386,7 @@ textarea:focus-visible {
   right: 0;
   width: 65%;
   height: 100%;
-  background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=1920&q=80') center/cover no-repeat;
   mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.45) 30%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.85) 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.45) 30%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.85) 100%);
   opacity: 0.5;
@@ -449,7 +461,7 @@ textarea:focus-visible {
   padding: var(--sp-6) var(--sp-3);
   background:
     linear-gradient(135deg, rgba(8,15,29,.88) 0%, rgba(13,27,42,.82) 40%, rgba(27,45,69,.78) 100%),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=1920&q=80') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -482,31 +494,31 @@ textarea:focus-visible {
   z-index: 2;
 }
 
-/* Hero-sm page variants — different corporate skylines */
+/* Hero-sm page variants — Asia-Pacific city skylines */
 .hero-sm.hero-services {
   background-image:
     linear-gradient(135deg, rgba(8,15,29,.88) 0%, rgba(13,27,42,.82) 40%, rgba(27,45,69,.78) 100%),
-    url('https://images.unsplash.com/photo-1562516155-e0c1ee44059b?w=1920&q=80');
+    url('https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?w=1920&q=80');
 }
 .hero-sm.hero-accreditation {
   background-image:
     linear-gradient(135deg, rgba(8,15,29,.88) 0%, rgba(13,27,42,.82) 40%, rgba(27,45,69,.78) 100%),
-    url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80');
+    url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1920&q=80');
 }
 .hero-sm.hero-membership {
   background-image:
     linear-gradient(135deg, rgba(8,15,29,.88) 0%, rgba(13,27,42,.82) 40%, rgba(27,45,69,.78) 100%),
-    url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80');
+    url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1920&q=80');
 }
 .hero-sm.hero-about {
   background-image:
     linear-gradient(135deg, rgba(8,15,29,.88) 0%, rgba(13,27,42,.82) 40%, rgba(27,45,69,.78) 100%),
-    url('https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?w=1920&q=80');
+    url('https://images.unsplash.com/photo-1565967511849-76a60a516170?w=1920&q=80');
 }
 .hero-sm.hero-contact {
   background-image:
     linear-gradient(135deg, rgba(8,15,29,.88) 0%, rgba(13,27,42,.82) 40%, rgba(27,45,69,.78) 100%),
-    url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80');
+    url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=1920&q=80');
 }
 
 .hero-buttons {
@@ -1744,9 +1756,9 @@ textarea:focus-visible {
 /* --- FOOTER --- */
 .site-footer {
   background: var(--navy);
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.8);
   padding: var(--sp-10) var(--sp-3) 0;
-  font-size: 15px;
+  font-size: 16px;
   overflow: hidden;
 }
 
@@ -1762,7 +1774,7 @@ textarea:focus-visible {
 
 .footer-col h4 {
   color: var(--gold);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1772,8 +1784,8 @@ textarea:focus-visible {
 
 .footer-col a {
   display: block;
-  color: rgba(255,255,255,.75);
-  font-size: 15px;
+  color: rgba(255,255,255,.8);
+  font-size: 16px;
   padding: 6px 0;
   transition: var(--tr);
 }
@@ -1814,7 +1826,7 @@ textarea:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   position: relative;
   gap: var(--sp-3);
   flex-wrap: wrap;
