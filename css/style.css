@@ -167,12 +167,11 @@ textarea:focus-visible {
   height: 64px;
   width: 64px;
   transition: var(--tr);
-  filter: brightness(0) invert(1);
 }
 
 .logo-img:hover {
   transform: scale(1.05);
-  filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,0.3));
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
 }
 
 .logo-text {
