@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="header-top">
       <div class="logo-area">
         <a href="index.html" aria-label="CACAP Home">
-          <img src="logo-white.png?v=2" alt="CACAP Logo" class="logo-img" width="64" height="64">
+          <img src="logo-white.png?v=2" alt="CACAP Logo" class="logo-img" width="70" height="70">
           <div class="logo-text">Construction Arbitration<br>Centre Asia Pacific<span>CACAP</span></div>
         </a>
       </div>
