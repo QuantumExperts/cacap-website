@@ -1990,8 +1990,30 @@ textarea:focus-visible {
   }
 
   .header-top {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: var(--sp-1);
+    padding: var(--sp-1) var(--sp-2);
+  }
+
+  .header-top .btn-nom {
+    display: none;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .logo-text {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .logo-text span {
+    font-size: 11px;
+    letter-spacing: 2.5px;
   }
 
   .footer-bottom {
