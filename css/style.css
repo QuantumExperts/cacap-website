@@ -329,10 +329,9 @@ textarea:focus-visible {
 /* --- HERO --- */
 .hero {
   background:
-    url('../img/hero-skyline.svg') center bottom / cover no-repeat,
-    radial-gradient(ellipse at 20% 50%, rgba(200,164,94,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 50%, rgba(200,164,94,.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(36,59,85,.6) 0%, transparent 50%),
     linear-gradient(135deg, #080f1d 0%, var(--navy) 30%, var(--navy-mid) 60%, var(--navy-light) 80%, var(--navy-mid) 100%);
-  background-attachment: fixed;
   min-height: 580px;
   padding: var(--sp-12) var(--sp-3);
   text-align: center;
