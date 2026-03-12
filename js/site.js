@@ -238,6 +238,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // --- HERO SLIDE ROTATION ---
+  var heroSlides = document.getElementById('hero-slides');
+  if (heroSlides) {
+    var slides = heroSlides.querySelectorAll('.hero-slide');
+    if (slides.length > 1) {
+      var currentSlide = 0;
+      setInterval(function () {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 6000);
+    }
+  }
+
   // --- FORM VALIDATION ENHANCEMENT ---
   document.querySelectorAll('form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
